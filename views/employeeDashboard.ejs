@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
+</head>
+  <body> 
+        <nav class="navbar navbar-default">
+           <div class="container">
+                  <h2 class="text-center">Mangement System</h2>
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="/employeeDashboard">Home</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Leave Form </a>
+                        <ul class="dropdown-menu">
+                          <li><a href="/employeeDashboard/create" class="dropdown-item"> create</a></li>
+                          <li><a href="/employeeDashboard/view" class="dropdown-item"> View</a></li>
+                      </ul>
+                    </li>   
+                  </ul>
+              <!-- Right side  -->
+                  <div class="navbar-header" style="float: right;"> 
+                    <div class="c-header-nav-item dropdown">
+                      <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" 
+                         aria-haspopup="true" aria-expanded="false">
+                        <div class="c-avatar">
+                          <i class="fa fa-user fa-1x" aria-hidden="true"style="margin-top: 13%"></i>
+                          <%= user %></div>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right ">
+                        <h5 class="text-center"><u>ID : <%= Data.Id %></u></h5>
+                        
+                        <p class="text-center"><a href="/logout"><b>Logout</b></a></p>
+                      </div>
+                    </div>
+                </div>   
+           </div>
+        </nav>
+  </body>
+</html>

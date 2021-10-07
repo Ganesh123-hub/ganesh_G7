@@ -1,0 +1,54 @@
+
+	 <%- include('header') %> 
+  
+    <div class="container">
+      <div class="row">
+        
+          <div id="" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                      <div class="panel-title"> 
+                            <h4 class="text-center"><b>ADD NEW ROLE</b></h4>
+                      </div>
+                    </div>  
+                  <div class="panel-body" >
+                      <form action="/addRole" class="form-horizontal" method="post">
+                          <%  if(ad_msg != '') { %>
+                          <div id="signupalert"  class="alert alert-danger">
+                             <p class="text-center" style="color: red">
+                                  <strong><%= ad_msg.role1.msg %></strong>
+                             </p>
+                          </div>
+                              <% } %>
+                              <%  if(db_msg != '') { %>
+                          <div id="signupalert"  class="alert alert-danger">
+                             <p class="text-center" style="color: red">
+                                 <strong><%= db_msg %></strong>
+                             </p>
+                          </div>
+                              <% } %>
+                          <div class="form-group">
+                              <label for="username" class="col-md-3 control-label">Enter Role</label>
+                              <div class="col-md-9">
+                                  <input type="text" class="form-control" name="role1" 
+                                         placeholder="Enter Role Name">
+                              </div>
+                          </div>    
+                           
+                          <div class="form-group">                                      
+                              <div class="col-md-offset-3 col-md-9">
+                                 <input type="submit" name="submit" value="OK" 
+                                        class="btn btn-primary">   
+                              </div>
+                          </div>
+                          <div style="float: right;">      
+                               <a href="/viewRole"><b>View All Role</b></a>
+                          </div>
+                      </form>
+                   </div>
+              </div>       
+   </div> 
+      </div>
+    </div>
+  
+  

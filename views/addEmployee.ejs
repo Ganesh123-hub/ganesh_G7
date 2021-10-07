@@ -1,0 +1,150 @@
+
+   <%- include('header') %> 
+
+    <div class="container">
+      <div class="row">
+        
+          <div id="" style="margin-top:50px" 
+               class="mainbox col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                      <div class="panel-title"> 
+                            <h4 class="text-center"><b>ADD NEW EMPLOYEE</b></h4>
+                      </div>
+                    </div> 
+                    <div style="float: right;">      
+                          <a href="/addEmployee/viewEmployee"><b>View All Employees</b></a> 
+                    </div> <br>
+                  <div class="panel-body" >
+                      <form action="/addEmployee" class="form-horizontal" method="post">
+                          
+                           <% if(db_msg != '') { %>
+                          <div id="signupalert"  class="alert alert-danger">
+                             <p class="text-center" style="color: red">
+                                 <strong><%= db_msg %></strong>
+                             </p>
+                          </div>
+                              <% } %>
+                          
+                              <div class="col-lg-6 col-md-6 col-sm-12">  
+                                
+                                <div class="form-group">
+                                   <label class="col-md-3 control-label">Id</label>
+                                     <div class="col-md-9">  
+
+                                         <input type="text" class="form-control" name="id" 
+                                                value="<%= vData.Id %>" placeholder="Enter id"> 
+                   <% if(ad_msg.id) { %> <p style="color: red"><%= ad_msg.id.msg %></p> <% } %>      
+                                     </div>
+                                </div>   
+                                 <div class="form-group">
+                                   <label class="col-md-3 control-label">Name</label>
+                                     <div class="col-md-9">
+                                         <input type="text" class="form-control" name="name" 
+                                              value="<%= vData.Name %>"  placeholder="Enter Name">
+                  <% if(ad_msg.name) { %> <p style="color: red"><%= ad_msg.name.msg %></p> <% } %>
+                                     </div>
+                                </div>   
+                                <div class="form-group">
+                                   <label class="col-md-3 control-label">Dept</label>
+                                     <div class="col-md-9">                                    
+                                       <select name="dept"> <% if(vData.Dept){ %>
+                                         <option hidden selected><%= vData.Dept %></option>
+                                            <% } else { %>        
+                                         <option value="SELECT" hidden selected>SELECT</option>             
+                                          <% } for(var i in get_dept) { %> 
+                                         <option><%= get_dept[i].Dept %></option>
+                                     <% } %> </select>
+                                        
+                                      
+                                     </div>
+                                </div>
+                                <div class="form-group">
+                                   <label class="col-md-3 control-label">Join Date</label>
+                                     <div class="col-md-9">
+                                         <input type="date" class="form-control" name="jdate" 
+                                            value="<%= vData.JoinDate %>">
+                                     </div>
+                                </div>
+                                 <div class="form-group">
+                                   <label class="col-md-3 control-label">Password</label>
+                                     <div class="col-md-9">
+                                         <input type="password" class="form-control" name="pass" 
+                                            value="<%= vData.Pass %>" placeholder="Enter Password">
+                <% if(ad_msg.pass) { %> <p style="color: red"><%= ad_msg.pass.msg %></p> <% } %>
+                                     </div>
+                                </div>
+                              </div>
+                              
+                              <div class="col-lg-6 col-md-6 col-sm-12">
+                                 <div class="form-group">
+                                   <label class="col-md-3 control-label">Email</label>
+                                     <div class="col-md-9">
+                                         <input type="email" class="form-control" name="email" 
+                                            value="<%= vData.Email %>" placeholder="Enter Email">
+         <% if(ad_msg.email) { %> <p style="color: red"><%= ad_msg.email.msg %></p> <% } %> 
+                                     </div>
+                                </div>
+                                <div class="form-group">
+                                   <label class="col-md-3 control-label">Mobile</label>
+                                     <div class="col-md-9">
+                                         <input type="text" class="form-control" name="phone" 
+                                            value="<%= vData.Phone %>" placeholder="Enter Mobile">
+         <% if(ad_msg.mobile) { %> <p style="color: red"><%= ad_msg.mobile.msg %></p> <% } %>
+                                     </div>
+                                </div>
+                                 <div class="form-group">
+                                   <label class="col-md-3 control-label">Role</label>
+                                     <div class="col-md-9">
+                                       <select name="role"> <% if(vData.Role){ %>
+                                         <option selected hidden><%= vData.Role %></option>
+                                         <% } else { %>
+                                         <option value="SELECT" selected hidden>SELECT</option>
+                                      <% } for(var i in get_role) {%>
+                                         <option><%= get_role[i].Role  %></option>
+                                      <% } %>
+                                       </select>  
+                                     </div>
+                                </div>
+                                <div class="form-group"> 
+                                   <label class="col-md-3 control-label">Status</label>
+                                     <div class="col-md-9"> 
+                                         <select name="status"> <% if(vData.Status){ %> 
+                                          <option hidden selected><%= vData.Status %></option>
+                                           <% } else { %> 
+                                          <option value="SELECT" hidden selected>SELECT</option>
+                                          <% } %>
+                                          <option>Inactive</option>
+                                          <option>Active</option>
+                                        </select>      
+                                     </div>
+                                </div>
+                                 <div class="form-group">
+                                   <label class="col-md-3 control-label">Re-Password</label>
+                                     <div class="col-md-9">
+                                         <input type="password" class="form-control" name="cpass" 
+                                            value="<%= vData.cPass %>"placeholder="Enter Re-Password">
+        <% if(ad_msg.cpass) { %> <p style="color: red"><%= ad_msg.cpass.msg %></p> <% } %>
+                                     </div>
+                                </div>
+                              </div>
+                              <!-- submit Button -->
+                              <div class="form-group">                                      
+                              
+                                 <input type="submit" value="submit" 
+                                        class="btn btn-primary" style="margin-left: 42%;">   
+                              
+                          </div>
+                            
+
+                             
+                                               
+                      </form>
+                  </div>
+              </div>       
+          </div>
+      </div>
+    </div>
+
+
+

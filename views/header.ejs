@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Management</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
+
+  <style type="text/css">
+    .badge {margin:-30%}
+    .fa-bell {padding:10px}
+    .fa-user {padding-right:5px; padding-top:10px}
+  </style>
+ 
+</head>
+  
+   <body> 
+        <nav class="navbar navbar-default">
+            <div class="container">
+                  <h2 class="text-center">Mangement System</h2>
+                  <ul class="nav navbar-nav" >
+                    <li class="active"><a href="/header">Home</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Role </a>
+                      <ul class="dropdown-menu">
+                          <li><a href="/addRole" class="dropdown-item">Add New Role</a></li>
+                          <li><a href="/viewRole" class="dropdown-item">View All Roles</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Department </a>
+                      <ul class="dropdown-menu">
+                          <li><a href="/addDept" class="dropdown-item">Add New Dept</a></li>
+                          <li><a href="/viewDept" class="dropdown-item">View All Depts</a></li>
+                      </ul>
+                    </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Eployee </a>
+                      <ul class="dropdown-menu">
+                          <li><a href="/addEmployee" class="dropdown-item" >Add New Employee</a></li>
+                        <li><a href="/addEmployee/viewEmployee" class="dropdown-item" >View All Employees</a></li>
+                      </ul>
+                    </li>
+                        <li><a href="/logout">Logout</a></li>
+                  </ul>
+
+                  <div style="float: right;">
+                      <div class="navbar-header">
+                         <a href="/notification">
+                           <i class="fa fa-bell fa-2x" aria-hidden="true"></i>
+                           <span class="badge">new</span>  
+                         </a>  
+                      </div>
+                      <div class="navbar-header">
+                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                     </div>
+                     <div class="navbar-header"> 
+                        <a class="navbar-brand" href="#"><%= user %></a>
+                     </div>
+                  </div>   
+             </div>
+          </nav>
+          <!--  -->
+    
+         <!--  -->
+      </body> 
+  </html>

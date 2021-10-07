@@ -1,0 +1,77 @@
+
+   <%- include('header') %> 
+  
+   <div style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                      <div class="panel-title"> 
+                            <h4 class="text-center"><b>View All Employee</b></h4>
+                      </div>
+                    </div> 
+                     <table class="table table-striped table-primary">
+          <thead>
+            <tr>
+              <th style="padding-left: 5%">Employee Detail</th>
+              <th style="float: right; color: blue">
+                <a href="/addEmployee"><b>Add New Employee</b></a>
+              </th>
+            </tr>
+            <tr><br> <p class="text-center text-danger"><b><%= msg %></b></p> </tr>
+            <tr>
+              <th style="padding-left: 10%">ID</th>
+              <th >Name</th>
+            </tr>
+          </thead>
+          <tbody> 
+            
+                <% for(var i in get_employee) {%> 
+               <tr>
+                  <td style="padding-left: 10%"><%= get_employee[i].Id %></td>
+                  <td><%= get_employee[i].Name %></td>
+                  <td style="padding-left: 5%">
+                        <button type="button" class="btn btn-info btn-xs" data-toggle="modal" 
+                          data-target="#myModal<%= get_employee[i]._id %>"><i class="fa fa-eye"></i>
+                        </button>
+                     <a class="btn btn-primary btn-xs" 
+                        href="/addEmployee/viewEmployee/edit/<%= get_employee[i]._id %>">
+                         <i class="fa fa-edit"></i> 
+                     </a> 
+                     <a class="btn btn-danger btn-xs" 
+                        href="/addEmployee/viewEmployee/delete/<%= get_employee[i]._id %>" 
+                         onclick="return confirm('Are you sure?')">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
+               </tr>
+               <!-- Modal -->
+  <div class="modal fade" id="myModal<%= get_employee[i]._id %>" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><%= get_employee[i].Name %></h4>
+          </div>
+          <div class="modal-body">
+             id : <%- get_employee[i].Id %><br>
+               <%- get_employee[i].Name  %><br>
+               <%- get_employee[i].Email  %><br>
+               <%- get_employee[i].Phone  %><br>
+             Role : <%- get_employee[i].Role  %><br>
+             
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>             
+                <% } %> 
+          </tbody> 
+         </table>
+              </div>           
+  </div>
+

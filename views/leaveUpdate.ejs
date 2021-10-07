@@ -1,0 +1,106 @@
+<%- include('employeeDashboard') %>
+<style type="text/css">
+  .col-md-9 {
+    width: 60%;
+}
+</style>
+
+   <div class="container">
+        <div class="row">
+   
+          <div id="" style="margin-top:50px" 
+               class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info">
+
+                  <div class="panel-heading"> 
+                      <div class="panel-title"> 
+                        <h4 class="text-center"><b>UPDATE FORM </b></h4>
+                      </div>
+                      <div style="float: right;">      
+                           <a href="/employeeDashboard/view"><b>View Leaves</b></a> 
+                      </div> <br>
+                  </div>
+
+                  <div class="panel-body" >
+                      <form action="/employeeDashboard/edit" id="lForm" 
+                            class="form-horizontal" method="post">
+                             <%= fData.Reason %>
+                           <div class="form-group">
+                              <label class="col-md-3 control-label">Id</label>
+                                <div class="col-md-9">  
+                                   <input type="text" class="form-control" name="id" 
+                                          value="<%= fData.Id %>" readonly> 
+                                </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-md-3 control-label">Employee Id</label>
+                                <div class="col-md-9">
+                                	<input type="text" class="form-control" name="eid" 
+                                          value="<%= fData.eId %>" readonly>
+                                </div>
+                          </div> 
+                          <div class="form-group">
+                               <label class="col-md-3 control-label">Reason</label>
+                                 <div class="col-md-9"> 
+                                 	<% if(vData){ %>
+                                     <textarea rows="4" cols="40" name="reason" 
+                                                required><%= vData.Reason %></textarea>
+                                 <% } else { %> 
+                                 <textarea rows="4" cols="40" name="reason"
+                                            value="" required><%= fData.Reason %></textarea>
+                                 <% } %> 
+                                 </div>
+                           </div>   
+                            <div class="form-group"> 
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-10">
+                                  <label class="col-md-2 control-label">FROM</label>
+                                  <div class="col-md-10">
+    
+                                   <% if(vData){ %>
+                                     <input type="date" class="form-control" name="sdate" 
+                                            value="<%= vData.Sdate %>" required>
+                                     <% } else { %> 
+                                      <input type="date" class="form-control" name="sdate" 
+                                             value="<%= sDbDate %>" required style="margin-left: 25px;">
+                                     <% } %> 
+                                  </div>
+                                </div>
+                               <div class="col-lg-6 col-md-6 col-sm-10">
+                                 <label class="col-md-2 control-label">TO</label>
+                                 <div class="col-md-10">
+                                 <% if(vData){ %>
+                                   <input type="date" class="form-control" name="edate" 
+                                     value="<%= vData.Edate %>" required> 
+                                   <% } else { %> 
+                                    <input type="date" class="form-control" name="edate" 
+                                            value="<%= eDbDate %>" required> 
+                                   <% } %>
+                                  </div>
+                                </div>
+                                <div class="form-group">                                       
+                                  <input type="submit" class="btn btn-primary" 
+                                        style="margin-left: 42%; margin-top:4%">       
+                              </div>           
+                      </form>
+                   </div>
+                      
+              </div>
+
+          </div>
+        </div>
+   </div>
+
+      <!--
+
+      -->                           
+                                
+                                           
+                                           
+                                      
+                              
+                                        
+                  
+                   
+
+
